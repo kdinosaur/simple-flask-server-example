@@ -15,6 +15,10 @@ def index():
 def hello():
   return render_template('hello.html', name=request.args.get('name'))
 
+@app.route('/about')
+def about():
+  return render_template('about.html')
+
 @app.errorhandler(404)
 def handle_404(e):
     return '<h1>404</h1><p>File not found!</p><img src="https://httpcats.com/404.jpg" alt="cat in box">', 404
